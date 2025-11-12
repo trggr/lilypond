@@ -10,12 +10,12 @@
 
 global = {
   \time 4/4
-  \tempo 4 = 140
+  \tempo 4 = 90
   \key do \major
 }
 
 \header {
-  title = "КАПИТАН"
+  title = "С"
   composer = ""
 }
 
@@ -50,15 +50,23 @@ MUSIC = {
             \relative do' { \include "piano1.ly" }
            >>
     
-           \new Staff  \with { midiInstrument = "cello"
+           \new Staff  \with { midiInstrument = "acoustic guitar (steel)"
                                midiMinimumVolume = #0.1
                                midiMaximumVolume = #0.5 
            } <<
             \clef bass
             \global
+            \relative do { \include "chords.ly"  }
+          >>
+
+           \new Staff  \with { midiInstrument = "fretless bass"
+           } <<
+            \clef bass
+            \global
             \relative do { \include "bass.ly"  }
           >>
-     >>
+
+      >>
      }
   >>
 }

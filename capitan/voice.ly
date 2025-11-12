@@ -1,15 +1,17 @@
 r2 si'4 do4        |
 \break
 
+%--2 
 re sol, sol sol    |
 sol4 r4 solb4 sol4 |
 la re, re re |
 re  r  do' re |
 \break
 
+%--6
 mi la, la la |
 la r si do |
-re r4 r2 |
+re2 r2 |
 r2 si4 do4 |
 \break
 
