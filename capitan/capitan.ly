@@ -10,7 +10,7 @@
 
 global = {
   \time 4/4
-  \tempo 4 = 90
+  \tempo 4 = 140
   \key do \major
 }
 
@@ -21,7 +21,11 @@ global = {
 
 MUSIC = {
   <<
-      \new Staff \with {midiInstrument = "clarinet" }
+    \new Lyrics \lyricmode   {
+      \include "lyrics.ly"
+    }
+    
+    \new Staff \with {midiInstrument = "clarinet" }
       <<
         \clef treble
         \global
@@ -29,26 +33,10 @@ MUSIC = {
            \include "voice.ly"
         }
       >>
-
-      \new Staff \with {midiInstrument = "oboe" }
-      <<
-        \clef treble
-        \global
-        \relative do' {
-           \include "oboe.ly"
-        }
-      >>
+    
 
      \new StaffGroup {
       <<
-          \new Staff  \with { midiInstrument = "violin"
-                              midiMinimumVolume = #0.1
-                              midiMaximumVolume = #0.5 
-           } <<
-            \clef treble
-            \global
-            \relative do' { \include "piano1.ly" }
-           >>
     
            \new Staff  \with { midiInstrument = "acoustic guitar (steel)"
                                midiMinimumVolume = #0.1
@@ -56,7 +44,7 @@ MUSIC = {
            } <<
             \clef bass
             \global
-            \relative do { \include "chords.ly"  }
+            % \relative do { \include "chords.ly"  }
           >>
 
            \new Staff  \with { midiInstrument = "fretless bass"

@@ -21,8 +21,12 @@ fa'4 mi re do |
 lab4 sol lab2 |
 
 do4 mi dod re     |
-fa4 re4 sol, si   |
-do1     |
+%fa4 re4 sol, si   |
+%do1     |
+
+re8 fa la do si re sol fa         |
+mi sol do, mi sol, do do,4        |
+
 
 
 %\alternative { 
