@@ -1,49 +1,91 @@
-% LilyBin
-
-\version "2.18.2"
+\version "2.24.4"
+\language "italiano"
 
 \header {
-    title    = "ii VI Exercises"
+    title    = "ii V I Exercises"
     composer = "Carol Kaye"
 }
 
-melody = \relative c {
+melody = \relative do {
   \clef bass
-  \key c \major
+  \key do \major
   \time 4/4
-  \tempo 4 = 60
+  \tempo 4 = 40
+
+  % Dm  G C  
+  re8 fa la do si re sol fa         |
+  mi sol do, mi sol, do do,4        |
+
+  % Cm F7 Bb
+  mib'8 do sib do la solb fa mib    |  \break
+  la, sib re fa la re, do' sol      |
+
+  %Bbm Eb7 Ab
+  sib8 fa reb sib mib mi mib' reb   |
+  do reb re mib reb do lab mib      |  \break    
+
+  % Abm Db7 Gb
+  sib'16 lab mib dob   sib8 lab8   mi''16 re la fa   mi8 re |
+  reb fa lab fa solb sib re4        |
   
-  d8 f a c b d g f              |  e g c, e g, c c,4 |
-  ees'8 c bes c a ges f ees     |  a, bes d f a d, c' g |
-  bes8 f des bes ees e ees' des |  c des d ees des c aes ees |
-  bes'16 aes ees ces   bes8 aes8   e''16 d a f   e8 d |  des f aes f ges bes d4        |
-  fis,,8 a cis c b fis' a cis   |  dis e b gis  fis e4. |
-  e,8 g b d  cis e g bes        |  a fis fis, a cis b4.       
+  % F#m B7 E
+  fad,,8 la dod do si fad' la dod   |  \break
+  red mi si sold  fad mi4.          |
+  
+  % Em A7 D
+  mi,8 sol si re  dod mi sol sib    |
+  la fad fad, la dod si4.           |  \break
+  
+  % Fm Bb7 Eb   Ebm Ab7
+  fa'8 lab do mib re dob sib lab    |
+  sol sib mib, sol sib, re fa mib   |
+  \tuplet 3/2 {mib8 re mib}  \tuplet 3/2 {solb fa solb} \tuplet 3/2 {sib la sib} reb fa | \break
+  
+  % Db Dbm Gb7 Cb Bm
+  lab sol solb lab fa do mib reb    |
+  reb, fab lab dob mib sib sol mi   |
+  dob' sib reb dob solb fa lab solb |
+  si re dod si sib4 la              |  \break
+  
+  % E7 A Am D7
+  sold8 si re mi \tuplet 3/2 {fa sol fa} mi re |
+  dod mi, fa fad fad4 r4 |
+  la'8 mi do la sold'16 mi do la sol' mi do la | \break
+  
+  % G Gm C7 F F6/9-5
+  fad'8 sol, mi' re re, do' si4 |
+  la,16 sib re fa la4 do,8 mi sold do |
+  mi16 mib re reb do la fa re   sol, si re sol  si4
 }
 
 harmonies = \chordmode {
-  d2:m   g2:7   |  c1     |  \break
-  c2:m   f2:7   |  bes1   |  \break
-  bes2:m ees2:7 |  aes1   |  \break
-  aes2:m des2:7 |  ges1   |  \break
-  fis2:m b2:7   |  e1     |  \break
-  e2:m   a2:7   |  d1     |  \break
-  f2:m   bes2:7 |  ees1   |  \break
-  ees2:m aes2:7 |  des1   |  \break
-  des2:m ges2:7 |  ces1   |  \break
-  b1:m          |  e1:7   | a1 | \break
-  a2:m   d2:7   |  g1     |      \break
-  g2:m   c2:7   |  f2 f2:6   
+  \germanChords
+  re2:m   sol2:7   |  do1     |  
+  do2:m   fa2:7   |  sib1   |  
+  sib2:m mib2:7 |  lab1   |  
+  lab2:m reb2:7 |  solb1   |  
+  fad2:m si2:7   |  mi1     |  
+  mi2:m   la2:7   |  re1     |  
+  fa2:m   sib2:7 |  mib1   |  
+  mib2:m lab2:7 |  reb1   |  
+  reb2:m solb2:7 |  dob1   |  
+  si1:m          |  mi1:7   | la1 | 
+  la2:m   re2:7   |  sol1     |      
+  sol2:m   do2:7   |  fa2 fa2:6   
 
 }
 
 \score {
     <<
-      \new ChordNames {
+      \new ChordNames \with { midiInstrument = "piano"
+                              midiMinimumVolume = #0.1
+                              midiMaximumVolume = #0.3 } {
          \set chordChanges = ##t
          \harmonies
       }
-      \new Staff \melody
+      \new Staff \with { midiInstrument = "acoustic bass"}  <<
+           \melody 
+      >>
     >>
     \layout{}
     \midi{}
