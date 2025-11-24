@@ -10,7 +10,7 @@
 
 global = {
   \time 4/4
-  \tempo 4 = 140
+  \tempo 4 = 60
   \key do \major
 }
 
@@ -38,16 +38,16 @@ MUSIC = {
      \new StaffGroup {
       <<
     
-           \new Staff  \with { midiInstrument = "acoustic guitar (steel)"
-                               midiMinimumVolume = #0.1
-                               midiMaximumVolume = #0.5 
+           \new Staff  \with { midiInstrument = "acoustic grand"
+                               %midiMinimumVolume = #0.1
+                               %midiMaximumVolume = #0.5 
            } <<
-            \clef bass
+            \clef treble
             \global
-            % \relative do { \include "chords.ly"  }
+            \relative do' { \include "chords.ly"  }
           >>
 
-           \new Staff  \with { midiInstrument = "fretless bass"
+           \new Staff  \with { midiInstrument = "acoustic grand"
            } <<
             \clef bass
             \global

@@ -4,8 +4,8 @@ r1 |
 % %\repeat volta 2 { 
 
 %-- 2
-mi8 sol la sol mi sol la sol |
-mi8 sol la sol mi sol la sol |
+<mi si'>2   <fa do'>4 <fa si>4|
+<mi sib'>2  <do sol'>4 <do fad>4 |
 si, re mi re si re mi re     |
 si re mi re si re mi re     |
 \break

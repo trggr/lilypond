@@ -3,9 +3,9 @@ sol'4 fa mi re |
 % %\repeat volta 2 { 
 
 %-- 2
-do4. si8  sol4 sol4   |
-do4. si8  sol4 sol4   |
-sol4. fa8 re4 re4   |
+do,2 re4 sol4  |
+do,2 la'4 re4 |
+sol2 la4 re,4  |
 sol4. fa8 re4 re4   |
 
 %-- 6
